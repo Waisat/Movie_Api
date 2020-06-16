@@ -1,0 +1,45 @@
+#play_now {
+  background: #020024;
+  background: linear-gradient(121deg, rgba(2, 0, 36, 0.9) 0%, rgba(55, 93, 125, 0.9) 0%, rgba(41, 53, 92, 0.7) 26%, rgba(255, 255, 255, 0.7) 100%);
+}
+#play_now h1 {
+  text-align: center;
+}
+
+#main_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container_newest {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container_newest #newestMovie {
+  width: 25%;
+}
+.container_newest #newestMovie #movies_newest ul li {
+  list-style: none;
+}
+.container_newest #newestMovie #movies_newest ul li img {
+  width: 50%;
+}
+.container_newest #newestMovie #movies_newest table {
+  font-size: 0.6em;
+  width: 1%;
+  text-align: center;
+}
+
+#page {
+  display: flex;
+  flex-direction: row;
+}
+#page a {
+  margin: 0 0.2em;
+}
+
+/*# sourceMappingURL=movies-list.component.css.map */

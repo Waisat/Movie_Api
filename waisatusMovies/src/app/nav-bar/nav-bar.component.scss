@@ -1,0 +1,79 @@
+$color:(
+primary: #29355c,
+  secondary:#121e50,
+  third: #ffff
+);
+
+@function chooseColor($pickColor){
+@return map_get($color, $pickColor)
+}
+
+#main_header {
+
+  width: 100%;
+  height: 50em;
+  margin: 0 auto;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(121deg, rgba(2, 0, 36, 0.9) 0%, rgba(55, 93, 125, 0.9) 0%, rgba(41, 53, 92, 0.7) 26%, rgba(255, 255, 255, 0.7) 100%);
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+
+    h1 {
+      color: chooseColor(third)
+    }
+
+    nav {
+
+
+      height: 5%;
+
+      ul {
+
+        display: flex;
+        flex-direction: row;
+
+
+        li {
+          list-style: none;
+          margin: 0 1em;
+
+          a {
+            text-decoration: none;
+            color: chooseColor(primary);
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+ #carousel_img{
+  display: flex;
+  flex-direction: row;
+   overflow: hidden;
+
+   li{
+     list-style: none;
+   }
+
+   img{
+     width: 200px;
+     box-shadow: 10px 5px 5px black;
+   }
+}
+aside{
+  ul{
+
+    width: 20%;
+
+    li{
+      list-style: none;
+    }
+  }
+}

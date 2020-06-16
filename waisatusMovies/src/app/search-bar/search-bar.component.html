@@ -1,0 +1,23 @@
+<aside>
+  <ul>
+    <li><a href="#">Now playing</a></li>
+    <li><a routerLink="/popular" routerLinkActive="active">Popular</a></li>
+    <li><a href="#">Top rated</a></li>
+    <li><a href="#">Upcoming</a></li>
+  </ul>
+</aside>
+
+
+<form #searchMovie = "ngForm" (keydown)="onSearchMovies()">
+  {{seachMovieModel | json}}
+<input type="text" name="search" [(ngModel)]="seachMovieModel.search">
+
+<div *ngIf="seachMovieModel.search!=''" >
+    <div *ngFor="let queryMovie of searchMovies.results">
+      <p>{{queryMovie.original_title}}</p>
+    </div>
+
+    <p>Still there</p>
+  </div>
+
+</form>

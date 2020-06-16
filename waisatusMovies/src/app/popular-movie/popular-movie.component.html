@@ -1,0 +1,31 @@
+<div id="popularMovie" *ngFor="let to of tmdbpopular.results">
+  <div id="movies_newest" >
+    <ul>
+
+      <li>{{to.original_title}}</li>
+
+      <li> <img src="{{urlPopularImage}}{{to.poster_path}}" alt="{{to.original_title}}" title="{{to.original_title}}"></li>
+      <li ><a routerLink="/detail/{{to.id}}" routerLinkActive="active">{{to.original_title}}</a></li>
+    </ul>
+
+    <table>
+      <thead>
+      <tr>
+        <th>realese Date</th>
+        <th>Popularity</th>
+        <th>Vote Average</th>
+        <th>Vote count</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr >
+        <td>{{to.genre_ids.id}}</td>
+        <td>{{to.release_date}}</td>
+        <td>{{to.popularity}}</td>
+        <td>{{to.vote_average}}</td>
+        <td>{{to.vote_count}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

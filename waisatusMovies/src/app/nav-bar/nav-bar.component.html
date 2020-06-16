@@ -1,0 +1,21 @@
+<div id="main_header">
+<header>
+  <h1>Goat Browser</h1>
+<nav>
+
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Login</a></li>
+  <li><a href="#">Register</a></li>
+
+</ul>
+</nav>
+
+
+</header>
+  <div id="carousel_img">
+  <ul id="carousel" *ngFor="let image of headerData.results">
+    <li> <img src="{{urlPopularImage}}{{image.poster_path}}" alt="{{image.original_title}}" title="{{image.original_title}}"></li>
+  </ul>
+  </div>
+</div>

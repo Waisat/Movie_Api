@@ -1,0 +1,49 @@
+
+<section id="play_now">
+  <h1>Playing Now</h1>
+<main id="main_container">
+
+<app-search-bar></app-search-bar>
+<section class="container_newest">
+<div id="newestMovie" *ngFor="let to of tmdbNews.results">
+<div id="movies_newest">
+  <ul>
+
+      <li>{{to.original_title}}</li>
+
+   <li> <img src="{{urlImage}}{{to.poster_path}}" alt="{{to.original_title}}" title="{{to.original_title}}"></li>
+
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th>release Date</th>
+      <th>Popularity</th>
+      <th>Vote Average</th>
+      <th>Vote count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{to.release_date}}</td>
+      <td>{{to.popularity}}</td>
+      <td>{{to.vote_average}}</td>
+      <td>{{to.vote_count}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+</section>
+
+</main>
+<section id="page">
+<div id="pagination" *ngFor="let page of pageArray">
+
+  <a routerLink="/page/{{page}}" routerLinkActive="active">{{page}}</a>
+</div>
+</section>
+
+</section>

@@ -1,0 +1,50 @@
+
+<section id="play_now">
+  <h1>Playing Now</h1>
+  <main id="main_container">
+
+    <app-search-bar></app-search-bar>
+    <section class="container_newest">
+      <div id="newestMovie" *ngFor="let newMovie of pageMovies.results">
+        <div id="movies_newest">
+          <ul>
+
+            <li>{{newMovie.original_title}}</li>
+
+            <li> <img src="{{urlImage}}{{newMovie.poster_path}}" alt="{{newMovie.original_title}}" title="{{newMovie.original_title}}"></li>
+            <li ><a routerLink="/detail_new/{{newMovie.id}}" routerLinkActive="active">{{newMovie.original_title}}</a></li>
+          </ul>
+
+          <table>
+            <thead>
+            <tr>
+              <th>release Date</th>
+              <th>Popularity</th>
+              <th>Vote Average</th>
+              <th>Vote count</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{newMovie.release_date}}</td>
+              <td>{{newMovie.popularity}}</td>
+              <td>{{newMovie.vote_average}}</td>
+              <td>{{newMovie.vote_count}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+  <section id="page">
+    <div id="pagination" *ngFor="let page of pageTab">
+
+      <a routerLink="/page/{{page}}"  routerLinkActive="active" (click)="refresh(page)" >{{page}}</a>
+    </div>
+  </section>
+
+</section>
+

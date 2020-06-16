@@ -1,0 +1,50 @@
+<p>newest-detail works!</p>
+
+<section id="newDetailimg">
+
+  <img src="{{urlDetailImg}}{{pageMoviesDetail.poster_path}}" alt="{{ pageMoviesDetail.original_title}}" title="{{ pageMoviesDetail.original_title}}">
+
+  <div class="carousel-container" >
+    <igx-carousel animationType="fade" #carousel [loop]="false" indicatorsOrientation="top">
+      <igx-slide *ngFor="let slide of allimg.backdrops" >
+        <div class="image-container">
+          <img src="{{urlDetailImg}}{{slide.file_path}}" [alt]="pageMoviesDetail.orginal_title">
+        </div>
+      </igx-slide>
+
+      <ng-template igxCarouselNextButton let-disabled>
+        <button igxButton="fab" igxRipple="white" [disabled]="disabled">
+
+        </button>
+      </ng-template>
+
+      <ng-template igxCarouselPrevButton let-disabled>
+        <button igxButton="fab" igxRipple="white" [disabled]="disabled">
+
+        </button>
+      </ng-template>
+
+
+    </igx-carousel>
+  </div>
+
+
+  <div id="trailer" *ngFor="let trailer of allTrailer.results">
+
+    <video width="320" height="240" controls>
+      <source src="{{trailerYoutube}}{{trailer.key}}" type="video/ogg">
+
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+
+
+
+</section>
+
+<section id="newDetail">
+
+<h5>{{pageMoviesDetail.original_title}}</h5>
+
+</section>
